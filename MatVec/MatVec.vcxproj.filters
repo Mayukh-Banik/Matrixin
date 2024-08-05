@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Headers">
+      <UniqueIdentifier>{791e9f20-19ec-4368-9c10-4faabc56728a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Headers\Class Definitions">
+      <UniqueIdentifier>{c06b97a6-7a36-4bd3-a40c-7c211304539d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source">
+      <UniqueIdentifier>{b34e9739-1607-463f-88c9-567492b60f2c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Libraries">
+      <UniqueIdentifier>{4658ed26-f54d-42a4-a225-6b10821079e3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\Bindings">
+      <UniqueIdentifier>{b3ca9bec-3af5-4647-8cc9-82a72e7e6634}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Headers\NewFilter1">
+      <UniqueIdentifier>{6a169d98-1843-4622-9320-836f9e4ab201}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="MatVecDeclaration.h">
+      <Filter>Headers\Class Definitions</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>
