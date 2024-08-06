@@ -5,7 +5,7 @@ VisualStudioVersion = 17.10.35122.118
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "MatVec", "MatVec\MatVec.vcxproj", "{236B5E2A-8A9D-43F1-99A2-4291C10FBB95}"
 EndProject
-Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "PythonTesting", "PyhtonTesting\PythonTesting.pyproj", "{B61EB1C8-8050-453F-AA55-A383211D9B5D}"
+Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "PythonTesting", "PythonTesting\PythonTesting.pyproj", "{62D66EC7-0240-46EE-A5FF-4CEBF299A583}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -23,10 +23,10 @@ Global
 		{236B5E2A-8A9D-43F1-99A2-4291C10FBB95}.Release|Any CPU.Build.0 = Release|x64
 		{236B5E2A-8A9D-43F1-99A2-4291C10FBB95}.Release|x64.ActiveCfg = Release|x64
 		{236B5E2A-8A9D-43F1-99A2-4291C10FBB95}.Release|x64.Build.0 = Release|x64
-		{B61EB1C8-8050-453F-AA55-A383211D9B5D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{B61EB1C8-8050-453F-AA55-A383211D9B5D}.Debug|x64.ActiveCfg = Debug|Any CPU
-		{B61EB1C8-8050-453F-AA55-A383211D9B5D}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{B61EB1C8-8050-453F-AA55-A383211D9B5D}.Release|x64.ActiveCfg = Release|Any CPU
+		{62D66EC7-0240-46EE-A5FF-4CEBF299A583}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{62D66EC7-0240-46EE-A5FF-4CEBF299A583}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{62D66EC7-0240-46EE-A5FF-4CEBF299A583}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{62D66EC7-0240-46EE-A5FF-4CEBF299A583}.Release|x64.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -2,16 +2,15 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>b61eb1c8-8050-453f-aa55-a383211d9b5d</ProjectGuid>
-    <ProjectHome>
-    </ProjectHome>
-    <StartupFile>PyhtonTesting.py</StartupFile>
+    <ProjectGuid>62d66ec7-0240-46ee-a5ff-4cebf299a583</ProjectGuid>
+    <ProjectHome>.</ProjectHome>
+    <StartupFile>PythonTesting.py</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
     <OutputPath>.</OutputPath>
     <Name>PythonTesting</Name>
-    <RootNamespace>PyhtonTesting</RootNamespace>
+    <RootNamespace>PythonTesting</RootNamespace>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
     <DebugSymbols>true</DebugSymbols>
@@ -22,7 +21,7 @@
     <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="PyhtonTesting.py" />
+    <Compile Include="PythonTesting.py" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\MatVec\MatVec.vcxproj">

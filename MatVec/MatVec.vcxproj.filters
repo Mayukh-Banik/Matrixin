@@ -4,9 +4,6 @@
     <Filter Include="Headers">
       <UniqueIdentifier>{791e9f20-19ec-4368-9c10-4faabc56728a}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Headers\Class Definitions">
-      <UniqueIdentifier>{c06b97a6-7a36-4bd3-a40c-7c211304539d}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Source">
       <UniqueIdentifier>{b34e9739-1607-463f-88c9-567492b60f2c}</UniqueIdentifier>
     </Filter>
@@ -16,13 +13,32 @@
     <Filter Include="Source\Bindings">
       <UniqueIdentifier>{b3ca9bec-3af5-4647-8cc9-82a72e7e6634}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Headers\NewFilter1">
+    <Filter Include="Source\Class Definitions">
+      <UniqueIdentifier>{c50a8cc3-96f4-48e6-a644-ac21b7ea5048}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Headers\Class Declarations">
+      <UniqueIdentifier>{c06b97a6-7a36-4bd3-a40c-7c211304539d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Headers\Constants">
       <UniqueIdentifier>{6a169d98-1843-4622-9320-836f9e4ab201}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="MatVecDeclaration.h">
-      <Filter>Headers\Class Definitions</Filter>
+      <Filter>Headers\Class Declarations</Filter>
     </ClInclude>
+    <ClInclude Include="Common Macros.h">
+      <Filter>Headers\Constants</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <CudaCompile Include="MatVecConstructors.cu">
+      <Filter>Source\Class Definitions</Filter>
+    </CudaCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Main Bindings.cpp">
+      <Filter>Source\Bindings</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

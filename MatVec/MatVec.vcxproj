@@ -11,7 +11,14 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Common Macros.h" />
     <ClInclude Include="MatVecDeclaration.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <CudaCompile Include="MatVecConstructors.cu" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Main Bindings.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{236B5E2A-8A9D-43F1-99A2-4291C10FBB95}</ProjectGuid>
