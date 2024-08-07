@@ -11,3 +11,5 @@
 	{	\
 		throw std::runtime_error(strerror(errno));	\
 	}
+
+#define DOUBLE_SIZE sizeof(double)

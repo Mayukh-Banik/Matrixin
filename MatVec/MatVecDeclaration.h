@@ -23,14 +23,16 @@ public:
     std::vector<unsigned long long int> Dimension = {};
     bool Host;
 
-    MatVec(double value, bool Host = true);
+    MatVec(double value, bool Host);
 
-    MatVec(std::vector<double>& values, bool Host = true);
+    MatVec(std::vector<double>& values, bool Host);
 
-    MatVec(std::vector<std::vector<double>>& values, bool Host = true);
+    MatVec(std::vector<std::vector<double>>& values, bool Host);
 
-    MatVec(unsigned long long int row, unsigned long long int col, bool Host = true);
+    MatVec(unsigned long long int row, unsigned long long int col, bool Host);
 
     ~MatVec();
+
+    std::string toString();
 };
 

@@ -40,5 +40,11 @@
     <ClCompile Include="Main Bindings.cpp">
       <Filter>Source\Bindings</Filter>
     </ClCompile>
+    <ClCompile Include="MatVecCoreBindings.cpp">
+      <Filter>Source\Bindings</Filter>
+    </ClCompile>
+    <ClCompile Include="MatVecUtilityFunctions.cpp">
+      <Filter>Source\Class Definitions</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

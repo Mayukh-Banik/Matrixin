@@ -15,21 +15,24 @@ MatVec::MatVec(double value, bool Host)
 {
 	this->Host = true;
 	this->ElementCount = 0;
-	this->Dimension = { 1, 1 };
+	this->Dimension.push_back(1);
+	this->Dimension.push_back(1);
 	if (Host == true)
 	{
-		this->Data = (double*) std::malloc(sizeof(double));
+		this->Data = (double*) std::malloc(DOUBLE_SIZE);
 		if (this->Data == NULL)
 		{
 			throw std::runtime_error(strerror(errno));
 		}
+		this->Data[0] = value;
 	}
 	else
 	{
-		cudaError t = cudaMalloc((void**)&this->Data, sizeof(double));
+		cudaError t = cudaMalloc((void**)&this->Data, DOUBLE_SIZE);
 		CHECK_CUDA_ERROR(t)
+			cudaMemcpy(this->Data, &value, DOUBLE_SIZE, cudaMemcpyHostToDevice);
 	}
-	this->Data[0] = value;
+
 }
 
 MatVec::MatVec(std::vector<double>& values, bool Host)
@@ -43,18 +46,18 @@ MatVec::MatVec(std::vector<double>& values, bool Host)
 	this->Dimension = { this->ElementCount, 1 };
 	if (Host == true)
 	{
-		this->Data = (double*)std::malloc(sizeof(double) * this->ElementCount);
+		this->Data = (double*)std::malloc(DOUBLE_SIZE * this->ElementCount);
 		if (this->Data == NULL)
 		{
 			throw std::runtime_error(strerror(errno));
 		}
-		std::memcpy(this->Data, values.data(), sizeof(double) * this->ElementCount);
+		std::memcpy(this->Data, values.data(), DOUBLE_SIZE * this->ElementCount);
 	}
 	else
 	{
-		cudaError t = cudaMalloc((void**)&this->Data, sizeof(double));
+		cudaError t = cudaMalloc((void**)&this->Data, DOUBLE_SIZE);
 		CHECK_CUDA_ERROR(t)
-		t = cudaMemcpy(this->Data, values.data(), sizeof(double) * this->ElementCount, cudaMemcpyHostToDevice);
+		t = cudaMemcpy(this->Data, values.data(), DOUBLE_SIZE * this->ElementCount, cudaMemcpyHostToDevice);
 		CHECK_CUDA_ERROR(t)
 	}
 }
@@ -79,26 +82,25 @@ MatVec::MatVec(std::vector<std::vector<double>>& values, bool Host)
 	this->Host = Host;
 	if (Host == true)
 	{
-		this->Data = (double*)malloc(rowCount * colCount * sizeof(double));
-
+		this->Data = (double*)malloc(rowCount * colCount * DOUBLE_SIZE);
+		CHECK_MALLOC_REQUEST(this->Data)
 		double* temp = this->Data;
-		size_t step = rowCount * sizeof(double);
 		for (std::vector<double> inner : values)
 		{
-			std::memcpy(temp, inner.data(), step);
-			temp = temp + step;
+			std::memcpy(temp, inner.data(), rowCount * DOUBLE_SIZE);
+			temp = temp + rowCount;
 		}
 	}
 	else
 	{
-		cudaError t = cudaMalloc((void**)&this->Data, rowCount * colCount * sizeof(double));
+		cudaError t = cudaMalloc((void**)&this->Data, rowCount * colCount * DOUBLE_SIZE);
 		CHECK_CUDA_ERROR(t)
 		double* temp = this->Data;
-		size_t step = rowCount * sizeof(double);
+		size_t step = rowCount * DOUBLE_SIZE;
 		for (std::vector<double> inner : values)
 		{
-			t = cudaMemcpy(temp, inner.data(), step, cudaMemcpyHostToDevice);
-			temp = temp + step;
+			t = cudaMemcpy(temp, inner.data(), rowCount * DOUBLE_SIZE, cudaMemcpyHostToDevice);
+			temp = temp + rowCount;
 			CHECK_CUDA_ERROR(t)
 		}
 	}
@@ -111,12 +113,12 @@ MatVec::MatVec(unsigned long long int row, unsigned long long int col, bool Host
 	this->Dimension = { row, col };
 	if (Host == true)
 	{
-		this->Data = (double*)malloc(this->ElementCount * sizeof(double));
+		this->Data = (double*)malloc(this->ElementCount * DOUBLE_SIZE);
 		CHECK_MALLOC_REQUEST(this->Data)
 	}
 	else
 	{
-		cudaError t = cudaMalloc((void**)&this->Data, this->ElementCount * sizeof(double));
+		cudaError t = cudaMalloc((void**)&this->Data, this->ElementCount * DOUBLE_SIZE);
 		CHECK_CUDA_ERROR(t)
 	}
 }
